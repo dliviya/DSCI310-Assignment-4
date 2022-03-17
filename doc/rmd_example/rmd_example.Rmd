@@ -1,11 +1,15 @@
 ---
 title: 'DSCI 310: Historical Horse Population in Canada'
 author: "Tiffany Timbers & Jordan Bourak"
+header-includes: #allows you to add in your own Latex packages
+- \usepackage{float} #use the 'float' package
+- \floatplacement{figure}{H} #make every figure with caption = h
 output:
   bookdown::html_document2:
       toc: true
       toc_depth: 2
   bookdown::pdf_document2:
+      extra_dependencies: ["float"]
       toc: true
       toc_depth: 2
 
@@ -14,6 +18,7 @@ bibliography: references.bib
 
 ```{r}
 library(tidyverse)
+library(kableExtra)
 ```
 
 # Aim
@@ -30,7 +35,7 @@ The R programming language [@R] and the following R packages were used to perfor
 
 # Results
 
-```{r horse-pop, out.width="100%", echo = FALSE, fig.cap = "Horse populations for all provinces in Canada from 1906 - 1972", fig.pos = "H", out.extra = ""}
+```{r horse-pop, out.width="100%", echo = FALSE, fig.cap = "Horse populations for all provinces in Canada from 1906 - 1972"}
 knitr::include_graphics("../../results/horse_pops_plot.png")
 ```
 
@@ -51,7 +56,7 @@ $$s = \sqrt( sum_{i = 1}^n(x_i - \bar{x}) / (n-1))$$
 Additionally, note that in Table \@ref(tab:sd-table) we consider the sample standard deviation of the number of horses during the same time span as Figure \@ref(fig:horse-pop).
 
 
-```{r horse-pop-large-sd, out.width="60%", echo = FALSE, fig.cap = "Horse populations for the province with the largest standard deviation", fig.pos = "H", out.extra = ""}
+```{r horse-pop-large-sd, out.width="60%", echo = FALSE, fig.cap = "Horse populations for the province with the largest standard deviation"}
 knitr::include_graphics("../../results/horse_pop_plot_largest_sd.png")
 ```
 
