@@ -1,15 +1,11 @@
 ---
 title: 'DSCI 310: Historical Horse Population in Canada'
 author: "Tiffany Timbers & Jordan Bourak"
-header-includes: #allows you to add in your own Latex packages
-- \usepackage{float} #use the 'float' package
-- \floatplacement{figure}{H} #make every figure with caption = h
 output:
   bookdown::html_document2:
       toc: true
       toc_depth: 2
   bookdown::pdf_document2:
-      extra_dependencies: ["float"]
       toc: true
       toc_depth: 2
 
@@ -18,7 +14,6 @@ bibliography: references.bib
 
 ```{r}
 library(tidyverse)
-library(kableExtra)
 ```
 
 # Aim
